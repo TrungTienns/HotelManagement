@@ -1,4 +1,4 @@
-package com.mycompany.hotelproject;
+package com.mycompany.hotelproject.Views;
 
 import javafx.application.Application;
 import javafx.geometry.*;
@@ -28,9 +28,31 @@ public class LandingPage extends Application {
 
         Label home = new Label("Trang chủ");
         Label service = new Label("Dịch vụ");
+        service.setOnMouseClicked(e -> {
+            ServicePage servicePage = new ServicePage();
+            servicePage.start(primaryStage);
+        });
         Label about = new Label("Về chúng tôi");
-        Label contact = new Label("Liên hệ");
+        
+        //GridPane chính
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(40));
+        grid.setVgap(30);
+        grid.setHgap(30);
+        grid.setAlignment(Pos.CENTER);
 
+        // Ví dụ sự kiện click
+        about.setOnMouseClicked(e -> {
+            AboutUsPage aboutUsPage = new AboutUsPage();
+            aboutUsPage.start(primaryStage);
+        });
+        
+
+        Label contact = new Label("Liên hệ");
+        contact.setOnMouseClicked (e -> {
+            ContactPage contactPage = new ContactPage();
+            contactPage.start(primaryStage);
+        });
         // Icon Account
         Button accountBtn = new Button("👤");
         accountBtn.setStyle("-fx-font-size: 20px; -fx-background-color: transparent;");
@@ -58,9 +80,9 @@ public class LandingPage extends Application {
         VBox textBox = new VBox(10, title, promo, description);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
-        // Hình ảnh tròn
-        Image image = new Image("file:src/main/resources/hotel.jpg");
-        ImageView imageView = new ImageView(image);
+        // Hình ảnh tròn (banner)
+        Image bannerImage = new Image("file:src/main/java/images/banner.jpg");
+        ImageView imageView = new ImageView(bannerImage);
         imageView.setFitWidth(300);
         imageView.setFitHeight(300);
         Circle clip = new Circle(150, 150, 150);
@@ -77,12 +99,24 @@ public class LandingPage extends Application {
         bookNow.setFont(Font.font("Arial", 30));
         textBox.getChildren().add(bookNow);
         
-
         // Tổng thể
         VBox root = new VBox(menuBar, mainContent);
+
+        // Thêm background cho toàn bộ scene
+        Image bgImage = new Image("file:src/main/java/images/background.jpg");
+        BackgroundImage bg = new BackgroundImage(
+            bgImage,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.DEFAULT,
+            new BackgroundSize(100, 100, true, true, true, true)
+        );
+        root.setBackground(new Background(bg));
+
         Scene scene = new Scene(root, 1000, 600);
         primaryStage.setTitle("Luxury Hotel & Resort");
         primaryStage.setScene(scene);
+        root.setStyle("-fx-background-color: #D4AF37;");
         primaryStage.show();
     }
 

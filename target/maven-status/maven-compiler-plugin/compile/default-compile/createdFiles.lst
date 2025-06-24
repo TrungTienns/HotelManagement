@@ -1,3 +1,7 @@
+com/mycompany/hotelproject/Views/AboutUsPage.class
+com/mycompany/hotelproject/Views/AllRoom.class
+com/mycompany/hotelproject/Views/ContactPage.class
 module-info.class
+com/mycompany/hotelproject/Views/LandingPage.class
 com/mycompany/hotelproject/SystemInfo.class
-com/mycompany/hotelproject/App.class
+com/mycompany/hotelproject/Views/ServicePage.class

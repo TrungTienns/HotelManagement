@@ -13,6 +13,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
+    
 
     <dependencies>
         <dependency>
@@ -29,7 +30,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.mycompany.hotelproject.App</mainClass>
+                    <mainClass>com.mycompany.hotelproject.Views.LandingPage</mainClass>
                 </configuration>
             </plugin>
         </plugins>
