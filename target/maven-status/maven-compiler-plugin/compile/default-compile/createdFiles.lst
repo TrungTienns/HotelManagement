@@ -1,8 +1,16 @@
 com/mycompany/hotelproject/Views/AboutUsPage.class
+com/mycompany/hotelproject/LandingPage.class
+com/mycompany/hotelproject/Views/LoginPage.class
+com/mycompany/hotelproject/models/Room.class
 com/mycompany/hotelproject/Views/AllRoom.class
 com/mycompany/hotelproject/Views/ContactPage.class
 module-info.class
-com/mycompany/hotelproject/Views/LoginPage.class
+com/mycompany/hotelproject/DashbroardAdmin.class
+com/mycompany/hotelproject/models/User.class
 com/mycompany/hotelproject/Views/LandingPage.class
+com/mycompany/hotelproject/models/Service.class
+com/mycompany/hotelproject/Views/UserView.class
 com/mycompany/hotelproject/SystemInfo.class
+com/mycompany/hotelproject/Views/RoomView.class
+com/mycompany/hotelproject/Views/ServiceView.class
 com/mycompany/hotelproject/Views/ServicePage.class

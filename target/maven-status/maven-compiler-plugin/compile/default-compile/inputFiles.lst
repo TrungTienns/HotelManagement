@@ -1,8 +1,16 @@
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/DashbroardAdmin.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/LandingPage.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/SystemInfo.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/AboutUsPage.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/AllRoom.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/ContactPage.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/LandingPage.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/LoginPage.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/RoomView.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/ServicePage.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/ServiceView.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/Views/UserView.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/models/Room.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/models/Service.java
+/Users/trungtien/NetBeansProjects/HotelProject/src/main/java/com/mycompany/hotelproject/models/User.java
 /Users/trungtien/NetBeansProjects/HotelProject/src/main/java/module-info.java
