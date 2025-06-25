@@ -2,6 +2,7 @@ package com.mycompany.hotelproject.Views;
 
 import javafx.application.Application;
 import javafx.geometry.*;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
