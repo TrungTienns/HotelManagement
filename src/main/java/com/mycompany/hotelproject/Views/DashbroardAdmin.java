@@ -1,4 +1,4 @@
-package com.mycompany.hotelproject;
+package com.mycompany.hotelproject.Views;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
