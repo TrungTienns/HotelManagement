@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -15,11 +16,19 @@ public class ContactPage extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Thanh menu trên cùng giống AboutUsPage
+        // Tạo ảnh nền như ServicePage
+        Image bgImage = new Image("file:src/main/java/images/banner.jpg");
+        ImageView background = new ImageView(bgImage);
+        background.setFitWidth(1000);
+        background.setFitHeight(650);
+        background.setPreserveRatio(false);
+
+        // Thanh menu trên cùng
         HBox menuBar = new HBox(30);
         menuBar.setPadding(new Insets(20));
-        menuBar.setStyle("-fx-background-color: #F5F5DC;");
-        
+        menuBar.setStyle("-fx-background-color: rgba(255,255,255,0.85);"); // nhẹ nhàng hơn để nổi bật
+        menuBar.setAlignment(Pos.CENTER_LEFT);
+
         Label logo = new Label("Luxury Hotel");
         logo.setFont(Font.font(20));
         logo.setStyle("-fx-font-weight: bold;");
@@ -60,24 +69,17 @@ public class ContactPage extends Application {
         GridPane.setHalignment(backButton, HPos.CENTER);
         grid.add(backButton, 1, 2); // đặt ở giữa
 
-        // Tổng thể
-        VBox root = new VBox(menuBar, grid);
+        // Tổng thể layout đặt lên nền
+        VBox content = new VBox(menuBar, grid);
+        content.setSpacing(10);
+        content.setPadding(new Insets(10));
 
-        // Thêm background image giống AboutUsPage
-        Image bgImage = new Image("file:src/main/java/images/background.jpg");
-        BackgroundImage bg = new BackgroundImage(
-            bgImage,
-            BackgroundRepeat.NO_REPEAT,
-            BackgroundRepeat.NO_REPEAT,
-            BackgroundPosition.DEFAULT,
-            new BackgroundSize(100, 100, true, true, true, true)
-        );
-        root.setBackground(new Background(bg));
+        StackPane root = new StackPane();
+        root.getChildren().addAll(background, content);
 
         Scene scene = new Scene(root, 1000, 650);
         primaryStage.setTitle("Liên hệ - Luxury Hotel");
         primaryStage.setScene(scene);
-        root.setStyle("-fx-background-color: #D4AF37;");
         primaryStage.show();
     }
 

@@ -128,6 +128,10 @@ public class LandingPage extends Application {
         dialog.setTitle("Account");
 
         Button loginButton = new Button("Đăng nhập");
+//        loginButton.setOnMouseClicked (e -> {
+//            LoginPage loginPage = new LoginPage();
+//            loginPage.start(primaryStage);
+//        });
         Button registerButton = new Button("Đăng ký");
 
         loginButton.setPrefWidth(150);

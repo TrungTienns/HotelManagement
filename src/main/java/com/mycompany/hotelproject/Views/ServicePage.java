@@ -4,10 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -84,13 +81,40 @@ public class ServicePage extends Application {
         dateGuestBox.setPadding(new Insets(10));
 
         // Nút tìm phòng
-        Button findRoom = new Button("FIND ROOM");
+        Button findRoom = new Button("TÌM PHÒNG");
         findRoom.setStyle("-fx-background-color: #cc0000; -fx-text-fill: white; -fx-font-weight: bold;");
         findRoom.setPrefWidth(200);
         findRoom.setPrefHeight(40);
 
+        // Xử lý sự kiện khi bấm FIND ROOM
+        findRoom.setOnAction(e -> {
+            if (checkInDatePicker.getValue() == null) {
+                showAlert("Vui lòng chọn ngày Check-in.");
+                return;
+            }
+
+            if (checkOutDatePicker.getValue() == null) {
+                showAlert("Vui lòng chọn ngày Check-out.");
+                return;
+            }
+
+            // Nếu hợp lệ, chuyển trang
+            AllRoom allRoom = new AllRoom();
+            allRoom.start(primaryStage);
+        });
+        
+        //Back
+        Button btnBack = new Button("QUAY LẠI TRANG CHỦ");
+        btnBack.setStyle("-fx-background-color: #666666; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnBack.setPrefWidth(200);
+        btnBack.setPrefHeight(40);
+        btnBack.setOnAction(e -> {
+        LandingPage landingPage = new LandingPage();
+        landingPage.start(primaryStage);
+        });
+
         // Tổng thể giao diện xếp dọc
-        VBox content = new VBox(30, title, dateGuestBox, findRoom);
+        VBox content = new VBox(30, title, dateGuestBox, findRoom, btnBack);
         content.setAlignment(Pos.CENTER);
         content.setPadding(new Insets(20));
 
@@ -103,6 +127,15 @@ public class ServicePage extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Hotel Self-Service App");
         primaryStage.show();
+    }
+
+    // Phương thức hiển thị thông báo
+        private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Thiếu thông tin");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     public static void main(String[] args) {
