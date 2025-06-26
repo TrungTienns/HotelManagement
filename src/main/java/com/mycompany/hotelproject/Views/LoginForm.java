@@ -28,18 +28,20 @@ public class LoginForm extends Application {
         //Email
         TextField email = new TextField();
         email.setPromptText("Email");
+        email.setStyle("-fx-font-size: 14px;");
         email.setMaxWidth(300);
         email.setMinHeight(40);
 
         //Password
         PasswordField password = new PasswordField();
         password.setPromptText("Password");
+        password.setStyle("-fx-font-size: 14px;");
         password.setMaxWidth(300);
         password.setMinHeight(40);
 
         //forgot pass
         Label lblForgotPass = new Label("Forgot Password ?");
-        lblForgotPass.setStyle("-fx-text-fill: RED");
+        lblForgotPass.setStyle("-fx-text-fill: RED; -fx-font-size: 14");
         HBox forgotPassBox = new HBox(lblForgotPass);
         forgotPassBox.setAlignment(Pos.CENTER_RIGHT);
         forgotPassBox.setMaxWidth(300);
@@ -51,8 +53,9 @@ public class LoginForm extends Application {
 
         //Sig up
         Text signUp = new Text("Sign Up");
-        signUp.setStyle("-fx-fill: red; -fx-underline: true;");
+        signUp.setStyle("-fx-fill: red; -fx-underline: true; -fx-font-size: 14px");
         Text already = new Text("You don't have an account yet? ");
+        already.setStyle("-fx-font-size: 14px");
         HBox toSignUp = new HBox(already, signUp);
         toSignUp.setAlignment(Pos.CENTER);
 
@@ -87,16 +90,22 @@ public class LoginForm extends Application {
         benefit3.setStyle("-fx-font-size: 16");
         benefit3.setWrapText(true);
 
-        VBox loyaltyBox = new VBox(20,logoImg, titleR, benefit1, benefit2, benefit3);
-        loyaltyBox.setPadding(new Insets(30));
-        loyaltyBox.setPrefWidth(400);
-        loyaltyBox.setStyle("-fx-background-color: #CCCCCC;");
+        VBox vbBenefit =  new VBox();
+        vbBenefit.getChildren().addAll(benefit1, benefit2, benefit3);
+        vbBenefit.setAlignment(Pos.CENTER_LEFT);
+        vbBenefit.setSpacing(10);
 
-        HBox root = new HBox( layoutLeft, loyaltyBox );
+        VBox layoutRight = new VBox(20,logoImg, titleR, vbBenefit);
+        layoutRight.setPadding(new Insets(30));
+        layoutRight.setAlignment(Pos.TOP_CENTER);
+        layoutRight.setPrefWidth(400);
+        layoutRight.setStyle("-fx-background-color: #CCCCCC;");
+
+        HBox root = new HBox( layoutLeft, layoutRight );
         root.widthProperty().addListener((obs, oldVal, newVal) -> {
             double halfWidth = newVal.doubleValue() / 2;
             layoutLeft.setPrefWidth(halfWidth);
-            loyaltyBox.setPrefWidth(halfWidth);
+            layoutRight.setPrefWidth(halfWidth);
         });
         Scene scene = new Scene(root, 800, 500);
         stage.setScene(scene);
